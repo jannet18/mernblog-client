@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: #222;
 }
@@ -72,4 +76,36 @@ img {
 .summary {
   margin: 10px 0;
   line-height: 1.8;
+}
+
+form.login,
+form.register {
+  max-width: 400px;
+  margin: 0 auto;
+}
+input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid skyblue;
+}
+
+button {
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  background-color: skyblue;
+  outline: none;
+  border: none;
+  border-radius: 0.5em;
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+form h1 {
+  text-align: center;
 }
