@@ -1,26 +1,48 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
-  async function login(e) {
+  async function handleLogin(e) {
     e.preventDefault();
-    const response = await fetch(`http://localhost:4000/login`, {
-      method: "POST",
-      body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    if (response.status === 200) {
-      alert("login successful");
-    } else {
-      // alert("login failed");
-      // response.status(400).json("wrong credentials");
+    if (username && password) {
+      const response = fetch("http://localhost:4000/login", {
+        method: "POST",
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+        headers: { "Content-Type": "application/json; charset=UTF-8" },
+        credentials: "include",
+      });
+      if (response) {
+        alert("login successful");
+      } else {
+        alert("login failed");
+        response.status(400).json("wrong credentials");
+      }
     }
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       // console.log(data);
+    //       if (data.status === 200) {
+    //         setRedirect(true);
+    //       } else {
+    //         data?.status(400)?.json("wrong credentials");
+    //         // alert("wrong credentials");
+    //       }
+    //     });
+    //   if (redirect) {
+    //     return <Navigate to="/" />;
+    //   }
+    // }
   }
+
   return (
-    <form className="login" onSubmit={login}>
+    <form className="login" onSubmit={handleLogin}>
       <h1>Login</h1>
       <input
         type="text"
@@ -38,5 +60,4 @@ const Login = () => {
     </form>
   );
 };
-
 export default Login;
