@@ -20,15 +20,6 @@ export const Register = () => {
           console.log(data);
         });
     }
-    // const options = {
-    //   Methods: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   // body: JSON.stringify({ username, password }),
-    // };
-    // await fetch("http://localhost:4000/register", options).then((res) => {
-    //   console.log(res);
-    // });
-    // console.log(response);
   }
 
   return (

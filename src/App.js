@@ -9,11 +9,11 @@ import { useEffect, useState } from "react";
 function App() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:4000/")
+    fetch("http://localhost:4000")
       .then((res) => res.json())
       .then((users) => setUsers(users));
     console.log(users);
-  }, []);
+  });
 
   return (
     <Routes>

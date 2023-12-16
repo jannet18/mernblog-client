@@ -20,25 +20,16 @@ const Login = () => {
       });
       if (response) {
         alert("login successful");
+        setRedirect(true);
       } else {
         alert("login failed");
         response.status(400).json("wrong credentials");
       }
     }
-    //     .then((response) => response.json())
-    //     .then((data) => {
-    //       // console.log(data);
-    //       if (data.status === 200) {
-    //         setRedirect(true);
-    //       } else {
-    //         data?.status(400)?.json("wrong credentials");
-    //         // alert("wrong credentials");
-    //       }
-    //     });
-    //   if (redirect) {
-    //     return <Navigate to="/" />;
-    //   }
-    // }
+  }
+
+  if (redirect) {
+    return <Navigate to="/" />;
   }
 
   return (
