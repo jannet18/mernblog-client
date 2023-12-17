@@ -49,6 +49,9 @@ div.content h2 {
   margin: 0;
   font-size: 1.8rem;
 }
+div.content a {
+  text-decoration: none;
+}
 
 .info {
   margin: 10px 0;
@@ -96,16 +99,18 @@ input {
 
 button {
   width: 100%;
-  padding: 6px;
+  padding: 8px;
   margin-top: 10px;
   background-color: skyblue;
   outline: none;
   border: none;
-  border-radius: 0.5em;
+  border-radius: 0.3em;
   color: whitesmoke;
   font-weight: bold;
+  text-align: center;
 }
 
-form h1 {
+form.login h1,
+form.register h1 {
   text-align: center;
 }

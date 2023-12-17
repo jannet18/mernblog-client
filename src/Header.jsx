@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { UserContext } from "../src/userContext.js";
 
 export default function Header() {
   // get current user
-  // const [userInfo, setUserInfo] = useState(null);
-  const [username, setUsername] = useState(null);
+  const { userInfo, setUserInfo } = useContext(UserContext);
+  // const [username, setUsername] = useState(null);
   useEffect(() => {
     fetch("http://localhost:4000/profile", {
       credentials: "include",
-    })
-      .then((response) => {
-        response.json();
-      })
-      .then((userInfo) => {
-        // setUserInfo(userInfo?.username);
-        setUsername(userInfo?.username);
+    }).then((response) => {
+      response.json().then(() => {
+        setUserInfo({ userInfo });
       });
+    });
   }, []);
 
   function logout() {
@@ -24,10 +22,10 @@ export default function Header() {
       credentials: "include",
       method: "POST",
     });
+    setUserInfo(null);
   }
-
-  // const username = userInfo?.username;
-  // console.log(loggedout);
+  // create
+  const username = userInfo?.username;
   return (
     <header>
       <Link to="/" className="logo">
@@ -35,40 +33,27 @@ export default function Header() {
       </Link>
 
       <nav>
-        {username && (
+        {!username && (
           <>
-            <Link to="/create">Create new post</Link>
-            <a href="/" onClick={logout}>
-              Logout ({username})
+            <Link to="/create">
+              <button>Create new post</button>
+            </Link>
+            <a href={username} onClick={logout}>
+              <button>Logout</button>
             </a>
           </>
         )}
-        {!username && (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
-      </nav>
-      {/* <nav>
         {username && (
           <>
-            <Link to="/create">Create new post</Link>
-            <Link>
-              <a href="/logout" onClick={logout}>
-                Logout
-              </a>
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+            <Link to="/register">
+              <button>Register</button>
             </Link>
           </>
         )}
-
-        {!username && (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
-          </>
-        )}
-      </nav> */}
+      </nav>
     </header>
   );
 }
