@@ -1,0 +1,14 @@
+.footer-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px 30px;
+}
+.footer-page h1 {
+  text-transform: uppercase;
+}
+.footer-page textarea {
+  border: none;
+  outline: none;
+}

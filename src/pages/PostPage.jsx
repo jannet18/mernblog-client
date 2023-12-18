@@ -31,8 +31,8 @@ export default function PostPage() {
 
       <div dangerouslySetInnerHTML={{ __html: postInfo?.content }}></div>
       <div className="edit-post">
-        <Link to={`/post/edit/${postInfo._id}`} className="edit-btn">
-          {userInfo.id === postInfo?.id}{" "}
+        <Link to={`/post/edit/${postInfo?._id}`} className="edit-btn">
+          {userInfo?.id === postInfo?.id}{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

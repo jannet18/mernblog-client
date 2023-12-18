@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
   async function register(e) {
     e.preventDefault();
@@ -18,10 +20,13 @@ export const Register = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          setRedirect(true);
         });
     }
   }
-
+  if (redirect) {
+    return <Navigate to="/" />;
+  }
   return (
     <form action="" className="register" onSubmit={register}>
       <h1>Register</h1>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../src/userContext.js";
 
-export default function Header() {
+export default function Header({ token }) {
   // get current user
   const { userInfo, setUserInfo } = useContext(UserContext);
   // const [username, setUsername] = useState(null);
@@ -21,13 +21,16 @@ export default function Header() {
     fetch("http://localhost:4000/logout", {
       credentials: "include",
       method: "POST",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     });
     setUserInfo(null);
   }
   // create
   const username = userInfo?.username;
   return (
-    <header>
+    <header className="header">
       <Link to="/" className="logo">
         Bloggy
       </Link>
@@ -35,14 +38,15 @@ export default function Header() {
       <nav>
         {!username && (
           <>
+            {/* <span>Hello, {username}</span> */}
             <Link to="/create">
               <button>Create new post</button>
             </Link>
-            <a href={username} onClick={logout}>
-              <button>Logout</button>
+            <a href="/" onClick={logout}>
+              <button>Logout{username}</button>
             </a>
           </>
-        )}
+        )}{" "}
         {username && (
           <>
             <Link to="/login">

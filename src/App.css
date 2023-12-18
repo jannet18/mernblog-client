@@ -8,17 +8,22 @@ body {
 /* img {
   width: 100%;
 } */
+a {
+  cursor: pointer;
+}
 main {
   padding: 10px;
-  max-width: 700px;
+  width: 1200px;
   margin: 0 auto;
 }
 
-header {
+.header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 50px;
-  margin-top: 20px;
+}
+.header span {
+  align-items: center;
 }
 
 header a {
@@ -28,19 +33,26 @@ header a {
 
 header a.logo {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 4.5rem;
+  margin-bottom: 10px;
 }
-
+header span {
+  text-align: center;
+  color: aquamarine;
+  font-weight: bold;
+}
 header nav {
   display: flex;
+  align-items: center;
+  justify-content: end;
   gap: 15px;
 }
 
 div.post {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-around;
+  /* flex-direction: column; */
   gap: 30px;
   margin-bottom: 20px;
 }
@@ -81,7 +93,6 @@ img {
   height: 400px;
   object-fit: cover;
   border-radius: 0.5em;
-  /* width: 100%; */
 }
 
 .summary {
@@ -116,6 +127,7 @@ button {
   color: whitesmoke;
   font-weight: bold;
   text-align: center;
+  cursor: pointer;
 }
 
 form.login h1,
@@ -146,6 +158,7 @@ div.post-page a.edit-btn {
   text-decoration: none;
   color: white;
   gap: 5px;
+  cursor: pointer;
 }
 div.post-page a svg {
   width: 24px;

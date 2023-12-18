@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { UserContext } from "../userContext";
 
-const Login = () => {
+const Login = ({ logout }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
@@ -19,22 +19,47 @@ const Login = () => {
         }),
         headers: { "Content-Type": "application/json; charset=UTF-8" },
         credentials: "include",
-      });
-      if (response) {
-        response.json().then(() => {
+      })
+        .then((response) => response.json())
+        .then((data) => {
           setUserInfo(userInfo);
-          alert("login successful");
+          console.log(data);
           setRedirect(true);
         });
-      } else {
-        alert("login failed");
-        response.status(400).json("wrong credentials");
-      }
+      // await response => response.json()
+      // if (((await response) && response).ok) {
+      //   response.json().then(() => {
+      //     setUserInfo(userInfo);
+      //     alert("login successful");
+      //     setRedirect(true);
+      //   });
+      // } else {
+      //   alert("login failed");
+      //   // response && response.status(400).json("wrong credentials");
+      // }
     }
   }
 
   if (redirect) {
-    return <Navigate to="/" />;
+    return (
+      <>
+        <Navigate to="/" />
+        <nav>
+          {" "}
+          {username && (
+            <>
+              {/* <span>Hello, {username}</span> */}
+              <Link to="/create">
+                <button>Create new post</button>
+              </Link>
+              <a href="/" onClick={logout}>
+                <button>Logout{username}</button>
+              </a>
+            </>
+          )}
+        </nav>
+      </>
+    );
   }
 
   return (
