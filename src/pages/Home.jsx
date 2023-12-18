@@ -11,9 +11,6 @@ export default function Home() {
   return (
     <div>
       {posts.length > 0 && posts.map((post, id) => <Post key={id} {...post} />)}
-      {/* <Post />
-      <Post />
-      <Post /> */}
     </div>
   );
 }

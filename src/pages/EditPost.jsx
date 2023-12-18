@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
-function CreatePost() {
+function EditPost() {
+  const { id } = useParams();
   const [title, setTitle] = useState("");
   const [summary, setSummary] = useState("");
   const [content, setContent] = useState("");
-  const [files, setFiles] = useState("");
-  const [redirect, setRedirect] = useState(false);
+  const [cover, setCover] = useState("");
+  const [files, setFiles] = useState(0);
+  const [redirect, setRedirect] = useState("");
 
   const modules = {
     toolbar: [
@@ -25,30 +27,44 @@ function CreatePost() {
     ],
   };
 
-  async function handleCreatePost(e) {
-    e.preventDefault();
-    const createData = new FormData();
-    createData.set("title", title);
-    createData.set("summary", summary);
-    createData.set("content", content);
-    createData.set("file", files[0]);
+  useEffect(() => {
+    fetch("http://localhost:4000/post/" + id)
+      .then((response) => response.json())
+      .then((postInfo) => {
+        setTitle(postInfo?.title);
+        setSummary(postInfo?.summary);
+        setContent(postInfo?.content);
+      });
+  }, []);
+  // console.log(await response.json());
+  // if (response.ok) {
+  //   setRedirect(true);
+  // }
 
-    const response = await fetch("http://localhost:4000/post", {
-      method: "POST",
-      body: createData,
+  async function handleUpdatePost(e) {
+    e.preventDefault();
+    const data = new FormData();
+    data.set("title", title);
+    data.set("summary", summary);
+    data.set("content", content);
+    data.set("id", id);
+    if (files?.[0]) {
+      data.set("file", files?.[0]);
+    }
+
+    await fetch("http://localhost:4000/post", {
+      method: "PUT",
+      body: data,
       credentials: "include",
     });
-    console.log(await response.json());
-    if (response.ok) {
-      setRedirect(true);
-    }
+    setRedirect(true);
   }
   if (redirect) {
-    return <Navigate to="/" />;
+    return <Navigate to={"/post/" + id} />;
   }
   return (
     <>
-      <form onSubmit={handleCreatePost}>
+      <form onSubmit={handleUpdatePost}>
         <input
           type="text"
           id="title"
@@ -75,10 +91,10 @@ function CreatePost() {
           onChange={(newValue) => setContent(newValue)}
           modules={modules}
         />
-        <button style={{ marginTop: "10px" }}>Create post</button>
+        <button style={{ marginTop: "10px" }}>Update post</button>
       </form>
     </>
   );
 }
 
-export default CreatePost;
+export default EditPost;

@@ -5,9 +5,9 @@
 body {
   color: #222;
 }
-img {
+/* img {
   width: 100%;
-}
+} */
 main {
   padding: 10px;
   max-width: 700px;
@@ -40,7 +40,7 @@ div.post {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   gap: 30px;
   margin-bottom: 20px;
 }
@@ -60,13 +60,20 @@ div.content a {
   font-weight: bold;
   display: flex;
   flex-direction: row;
-  justify-content: star;
+  justify-content: start;
   align-items: center;
   gap: 25px;
 }
 
 .author {
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: smaller;
+  text-align: left;
+  font-weight: bold;
+  margin: 0;
 }
 
 img {
@@ -74,6 +81,7 @@ img {
   height: 400px;
   object-fit: cover;
   border-radius: 0.5em;
+  /* width: 100%; */
 }
 
 .summary {
@@ -113,4 +121,37 @@ button {
 form.login h1,
 form.register h1 {
   text-align: center;
+}
+div.post-page div.image img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+div.post-page p.author {
+  font-size: 12px;
+}
+div.post-page p {
+  line-height: 1.8;
+}
+div.edit-post {
+  text-align: center;
+}
+div.post-page a.edit-btn {
+  background-color: aquamarine;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 0.3em;
+  text-decoration: none;
+  color: white;
+  gap: 5px;
+}
+div.post-page a svg {
+  width: 24px;
+}
+@media screen and (min-width: 768px) {
+  div.post {
+    flex-direction: row;
+  }
 }
