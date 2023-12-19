@@ -1,6 +1,6 @@
 :root {
   --bg: white;
-  --textColor: #222;
+  --textColor: black;
   --softBg: #f0f0f0;
   --softTextColor: #626262;
 }
@@ -18,13 +18,20 @@ body {
 }
 .dark {
   --bg: #0f172a;
-  --textColor: #ddd;
-  --softbg: #1f273a;
+  --textColor: #ddd !important;
+  --softBg: #1f273a;
   --softTextColor: #a6a6a6;
+}
+.light {
+  --bg: white;
+  --textColor: black;
+  --softBg: #f0f0f0;
+  --softTextColor: #626262;
 }
 .container {
   min-height: 100vh;
-  /* background-color: green; */
+  background-color: var(--bg);
+  color: var(--textColor);
 }
 
 .wrapper {
@@ -33,7 +40,7 @@ body {
   margin-right: auto;
   padding-left: 80px;
   padding-right: 80px;
-  margin-top: 40px;
+  padding-top: 30px;
 }
 /* **HEADER** */
 .nav__container {
@@ -81,11 +88,11 @@ body {
   width: 15px;
 }
 
-.ball__circle {
+.ball {
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: white;
+  /* background-color: white; */
   position: absolute;
   left: 1.2px;
 }

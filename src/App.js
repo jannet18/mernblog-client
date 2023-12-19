@@ -10,12 +10,14 @@ import PostPage from "./pages/PostPage";
 import EditPost from "./pages/EditPost";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import ThemeProvider from "./providers/ThemeProvider";
+// import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
   return (
-    <ThemeContextProvider>
-      <ThemeProvider>
-        <UserContextProvider>
+    <UserContextProvider>
+      <ThemeContextProvider>
+        <ThemeProvider>
+          {/* <ThemeToggle /> */}
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
@@ -27,9 +29,9 @@ function App() {
               <Route path="/edit/:id" element={<EditPost />} />
             </Route>
           </Routes>
-        </UserContextProvider>
-      </ThemeProvider>
-    </ThemeContextProvider>
+        </ThemeProvider>
+      </ThemeContextProvider>
+    </UserContextProvider>
   );
 }
 

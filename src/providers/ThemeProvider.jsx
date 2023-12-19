@@ -1,9 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 
 function ThemeProvider({ children }) {
   const { theme } = useContext(ThemeContext);
-  return <div className={theme}>{children}</div>;
+  // controls when the rendering should occur
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (mounted) {
+    return <div className={theme}>{children}</div>;
+  }
+  // if not mounted
+  return null;
 }
 
 export default ThemeProvider;

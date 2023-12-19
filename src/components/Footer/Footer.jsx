@@ -3,7 +3,7 @@ import "./Footer.css";
 // import { Link } from "react-router-dom";
 
 function Footer() {
-  return <div className="container"></div>;
+  return <div className=""></div>;
 }
 
 export default Footer;
