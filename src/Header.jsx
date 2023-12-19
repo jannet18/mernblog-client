@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../src/userContext.js";
-import ThemeToggle from "./components/ThemeToggle.jsx";
 // import ThemeToggle from "./components/ThemeToggle.jsx";
 
 export default function Header({ token }) {
