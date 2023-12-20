@@ -1,0 +1,147 @@
+.container {
+  padding: 30px;
+}
+.title {
+  font-size: 80px;
+  font-weight: 300;
+}
+.post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  place-content: center;
+  /* place-items: center; */
+  /* margin-top: 60px; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px; */
+}
+.imgContainer {
+  flex: 1;
+  height: 500px;
+  position: relative;
+}
+.postContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.postTitle {
+  font-size: 40px;
+}
+.imgContainer img {
+  object-fit: cover;
+  width: 100%;
+  width: 400px;
+  height: 400px;
+}
+.postDescription {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.8;
+}
+.author {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: start;
+}
+.more_btn {
+  padding: 10px 15px;
+  border: none;
+  background-color: #009dc4;
+  color: white;
+  border-radius: 0.3em;
+  width: max-content;
+  margin-top: 20px;
+}
+.info {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.info .author {
+  font-weight: bold;
+}
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 70px;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    place-content: center;
+    gap: 40px;
+  }
+  .more_btn {
+    margin-top: 15px;
+  }
+  .info {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .info .author {
+    font-weight: bold;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    place-content: center;
+    gap: 50px;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .postDescription {
+    font-size: 15px;
+  }
+  .postTitle {
+    font-size: 20px;
+  }
+  .info {
+    font-size: 16px;
+  }
+  .imgContainer {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 50px;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: -20px;
+    text-align: center;
+  }
+  .postTitle {
+    font-size: 30px;
+  }
+  .postDescription {
+    font-size: 25px;
+  }
+  .postContainer {
+    margin-top: -70px;
+  }
+  .imgContainer {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 30px;
+  }
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 20px;
+    text-align: center;
+  }
+}
