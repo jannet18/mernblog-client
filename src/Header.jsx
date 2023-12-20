@@ -1,9 +1,10 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../src/userContext.js";
 import ThemeToggle from "./components/ThemeToggle.jsx";
 
 export default function Header({ token }) {
+  const [open, setOpen] = useState(false);
   // get current user
   const { userInfo, setUserInfo } = useContext(UserContext);
   // const [username, setUsername] = useState(null);
@@ -32,7 +33,6 @@ export default function Header({ token }) {
   const username = userInfo?.username;
   return (
     <div className="nav__container">
-      {/* <header className="header"> */}
       <div className="social">
         <Link>
           <img
@@ -76,18 +76,122 @@ export default function Header({ token }) {
           Bloggy
         </Link>
       </div>
-      <div>
+      {open && (
+        <>
+          <div className="nav__links">
+            <>
+              <ThemeToggle />
+              <Link className="link" to="/">
+                Home
+              </Link>
+              <Link className="link" to="/">
+                Contact
+              </Link>
+              <Link className="link" to="/">
+                About
+              </Link>
+            </>
+
+            {username ? (
+              <div className="account">
+                {<Link className="link" to="/create">
+                  <button>Create new post</button>
+                </Link> ? (
+                  <Link className="link" to="/create">
+                    <button>Create new post</button>
+                  </Link>
+                ) : (
+                  <a href="/" className="link" onClick={logout}>
+                    <button>Logout{username}</button>
+                  </a>
+                )}
+              </div>
+            ) : (
+              <>
+                {<Link className="link" to="/login">
+                  <button>Login</button>
+                </Link> ? (
+                  <Link className="link" to="/register">
+                    <button>Register</button>
+                  </Link>
+                ) : (
+                  <Link className="link" to="/login">
+                    <button>Login</button>
+                  </Link>
+                )}
+              </>
+            )}
+          </div>
+        </>
+      )}
+      {/* <div className="nav__links">
         <ThemeToggle />
-      </div>
+        <Link className="link" to="/">
+          Home
+        </Link>
+        <Link className="link" to="/">
+          Contact
+        </Link>
 
-      <div className="nav__links">
-        {/* <ThemeToggle /> */}
-        <Link to="/">Home</Link>
-        <Link to="/">Contact</Link>
-
-        <Link to="/">About</Link>
+        <Link className="link" to="/">
+          About
+        </Link>
+      </div> */}
+      <div className="burger" onClick={() => setOpen(!open)}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </div>
-      {/* <nav>
+      {
+        open && (
+          <>
+            <div className="responsiveMenu">
+              <>
+                {/* <ThemeToggle /> */}
+                <Link className="link" to="/">
+                  Home
+                </Link>
+                <Link className="link" to="/">
+                  Contact
+                </Link>
+                <Link className="link" to="/">
+                  About
+                </Link>
+              </>
+
+              {username ? (
+                <div className="account">
+                  {<Link className="link" to="/create">
+                    <button>Create new post</button>
+                  </Link> ? (
+                    <Link className="link" to="/create">
+                      <button>Create new post</button>
+                    </Link>
+                  ) : (
+                    <a href="/" className="link" onClick={logout}>
+                      <button>Logout{username}</button>
+                    </a>
+                  )}
+                </div>
+              ) : (
+                <>
+                  {<Link className="link" to="/login">
+                    <button>Login</button>
+                  </Link> ? (
+                    <Link className="link" to="/register">
+                      <button>Register</button>
+                    </Link>
+                  ) : (
+                    <Link className="link" to="/login">
+                      <button>Login</button>
+                    </Link>
+                  )}
+                </>
+              )}
+            </div>
+          </>
+        )
+        /* <nav>
             {!username && (
               <>
                 <Link to="/create">
@@ -108,7 +212,8 @@ export default function Header({ token }) {
                 </Link>
               </>
             )}
-          </nav> */}
+            </nav> */
+      }
     </div>
   );
 }
