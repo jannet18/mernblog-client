@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Post } from "../components/post/Post";
 import Category from "../components/Category/Category";
+import CardList from "../components/Card/CardList";
+import Menu from "../components/Menu/Menu";
 
 export default function Home() {
   const [posts, setPosts] = useState([]);
@@ -16,8 +18,12 @@ export default function Home() {
         Discover my research and creative discoveries.
       </h1>
       {posts.length > 0 && posts.map((post, id) => <Post key={id} {...post} />)}
-      <div>
+      <div className="container">
         <Category />
+        <div className="content">
+          <CardList />
+          <Menu />
+        </div>
       </div>
     </div>
   );

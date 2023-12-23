@@ -71,80 +71,84 @@ export default function Header({ token }) {
           />
         </Link>
       </div>
-      <div className="nav__menu">
-        <div className="burger_menu">
-          <div className="logo">
-            {" "}
-            <Link to="/" className="logo">
-              Bloggy
-            </Link>
-          </div>
-          <div className="nav__links">
-            <ThemeToggle />
-            <Link className="link" to="/">
-              Home
-            </Link>
-            <Link className="link" to="/">
-              Contact
-            </Link>
-
-            <Link className="link" to="/">
-              About
-            </Link>
-          </div>
-
-          <div className="burger">
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-            <div className="line"></div>
-          </div>
-        </div>
-        {open && (
-          <div className="responsiveMenu">
-            <Link className="link" to="/">
-              Home
-            </Link>
-            <Link className="link" to="/">
-              Contact
-            </Link>
-
-            <Link className="link" to="/">
-              About
-            </Link>
-          </div>
-        )}
-        {username ? (
-          <div className="header_btn">
-            {/* <div className="header_btn"> */}
-            {<Link to="/create">
-              <button>Create new post</button>
-            </Link> ? (
-              <a href="/" onClick={logout}>
-                <button>Logout{username}</button>
-              </a>
-            ) : (
-              <Link to="/create">
-                <button>Create new post</button>
-              </Link>
-            )}
-          </div>
-        ) : (
-          <div className="header_btn">
-            {<Link to="/login">
-              <button>Login</button>
-            </Link> ? (
-              <Link to="/register">
-                <button>Register</button>
-              </Link>
-            ) : (
-              <Link to="/login">
-                <button>Login</button>
-              </Link>
-            )}
-          </div>
-        )}
+      {/* <div className="nav__menu"> */}
+      {/* <div className="burger_menu"> */}
+      {/* <div className="menu_logo"> */}
+      <div className="logo">
+        {" "}
+        <Link to="/" className="logo">
+          Bloggy
+        </Link>
       </div>
+      {/* </div> */}
+
+      <div className="nav__links">
+        <ThemeToggle />
+        <Link className="link" to="/">
+          Home
+        </Link>
+        <Link className="link" to="/">
+          Contact
+        </Link>
+
+        <Link className="link" to="/">
+          About
+        </Link>
+      </div>
+
+      <div className="burger">
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
+      </div>
+      {/* </div> */}
+      {open && (
+        <div className="responsiveMenu">
+          <Link className="link" to="/">
+            Home
+          </Link>
+          <Link className="link" to="/">
+            Contact
+          </Link>
+
+          <Link className="link" to="/">
+            About
+          </Link>
+        </div>
+      )}
+      {username ? (
+        <div className="header_btn">
+          {/* <div className="header_btn"> */}
+          {<Link to="/create">
+            <button>Create new post</button>
+          </Link> ? (
+            <a href="/" onClick={logout}>
+              <button>Logout{username}</button>
+            </a>
+          ) : (
+            <Link to="/create">
+              <button>Create new post</button>
+            </Link>
+          )}
+        </div>
+      ) : (
+        <div className="header_btn">
+          {<Link to="/login">
+            <button>Login</button>
+          </Link> ? (
+            <Link to="/register">
+              <button>Register</button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          )}
+        </div>
+      )}
+      {/* // </div> */}
+
       {/* <nav>
             {!username && (
               <>

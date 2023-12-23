@@ -1,0 +1,63 @@
+.categoryList {
+  margin-top: 35px;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.category_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.categoryItem {
+  padding: 10px 25px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+/* 
+.categoryItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  text-transform: capitalize;
+  width: 17%;
+} */
+.categoryItem img {
+  border-radius: 50%;
+}
+
+.categoryItem.travel {
+  background-color: #57c4ff31;
+  /* padding: 20px 25px;
+  border-radius: 10px; */
+}
+
+.categoryItem.fashion {
+  background-color: #da85c731;
+}
+
+.categoryItem.weight-loss {
+  background-color: #7fb88133;
+}
+
+.categoryItem.hiking {
+  background-color: #ff795736;
+}
+
+.categoryItem.develop {
+  background-color: #ffb04f45;
+}
+
+.categoryItem.health {
+  background-color: #5e4fff31;
+}

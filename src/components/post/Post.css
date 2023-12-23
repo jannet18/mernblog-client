@@ -91,19 +91,20 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     place-content: center;
-    gap: 50px;
+    gap: 30px;
   }
   .title {
     font-size: 50px;
   }
   .postDescription {
-    font-size: 15px;
+    font-size: 18px;
+    line-height: 1.4;
   }
   .postTitle {
-    font-size: 20px;
+    font-size: 22px;
   }
   .info {
-    font-size: 16px;
+    font-size: 14px;
   }
   .imgContainer {
     width: 50%;
@@ -119,6 +120,7 @@
     grid-template-rows: auto;
     margin-top: -20px;
     text-align: center;
+    gap: 150px;
   }
   .postTitle {
     font-size: 30px;

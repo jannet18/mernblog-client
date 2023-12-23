@@ -1,0 +1,84 @@
+.menu_container {
+  flex: 2;
+}
+.menu_subtitle {
+  color: gray;
+  font-size: 12px;
+  font-weight: 400;
+}
+.menu_title {
+  font-size: 28px;
+}
+.menu_items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.menu_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-direction: row; */
+  gap: 20px;
+}
+.img_Container {
+  flex: 1;
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+.menu_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 3px lightgray;
+}
+.text_Container {
+  display: flex;
+  flex-direction: column;
+  flex: 4;
+}
+.menu_category {
+  /* margin-top: 5px; */
+  padding: 3px 8px;
+  border-radius: 0.3em;
+  width: max-content;
+  color: white;
+}
+.menu_travel {
+  background-color: #ff7857;
+}
+.menu_culture {
+  background-color: #ffb14f;
+}
+.menu_fashion {
+  background-color: #ff7887;
+}
+.menu_health {
+  background-color: #789cff;
+}
+.menu_food {
+  background-color: #7fb881;
+}
+.menu_style {
+  background-color: #775aec;
+}
+.post_Title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--softTextColor);
+}
+.menu_detail {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.menu_detail .date {
+  color: gray;
+}
