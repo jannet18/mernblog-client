@@ -76,7 +76,7 @@ export default function Header({ token }) {
       {/* <div className="menu_logo"> */}
       <div className="logo">
         {" "}
-        <Link to="/" className="logo">
+        <Link to="/blog" className="logo">
           Bloggy
         </Link>
       </div>
@@ -84,14 +84,14 @@ export default function Header({ token }) {
 
       <div className="nav__links">
         <ThemeToggle />
-        <Link className="link" to="/">
+        <Link className="link" to="/home">
           Home
         </Link>
-        <Link className="link" to="/">
+        <Link className="link" to="/contact">
           Contact
         </Link>
 
-        <Link className="link" to="/">
+        <Link className="link" to="/about">
           About
         </Link>
       </div>
@@ -105,14 +105,14 @@ export default function Header({ token }) {
       {/* </div> */}
       {open && (
         <div className="responsiveMenu">
-          <Link className="link" to="/">
+          <Link className="link" to="/home">
             Home
           </Link>
-          <Link className="link" to="/">
+          <Link className="link" to="/contact">
             Contact
           </Link>
 
-          <Link className="link" to="/">
+          <Link className="link" to="/about">
             About
           </Link>
         </div>

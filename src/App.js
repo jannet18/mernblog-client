@@ -10,6 +10,7 @@ import PostPage from "./pages/PostPage";
 import EditPost from "./pages/EditPost";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import ThemeProvider from "./providers/ThemeProvider";
+import Blog from "./pages/Blogpage/Blog";
 // import ThemeToggle from "./components/ThemeToggle";
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
               <Route path="/post/:id" element={<PostPage />} />
               <Route path="/edit/:id" element={<EditPost />} />
             </Route>
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<Blog />} />
           </Routes>
         </ThemeProvider>
       </ThemeContextProvider>

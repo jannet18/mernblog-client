@@ -1,0 +1,53 @@
+/* .single_container {
+} */
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.textContainer {
+  flex: 1;
+}
+.textTitle {
+  font-size: 64px;
+  margin-bottom: 50px;
+}
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.userImage {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.userName {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--softTextColor);
+}
+
+.imageContainer {
+  flex: 1;
+  height: 530px;
+  position: relative;
+}
+.image {
+  object-fit: cover;
+}
+.content {
+  display: flex;
+  gap: 50px;
+}
+.single_post {
+  flex: 5;
+  margin-top: 60px;
+}
+
+.description p {
+  font-size: 20px;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
