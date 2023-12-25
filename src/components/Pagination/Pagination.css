@@ -1,0 +1,11 @@
+.pag_container {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  border: none;
+  width: 100px;
+  padding: 16px;
+  background-color: crimson;
+  cursor: pointer;
+}

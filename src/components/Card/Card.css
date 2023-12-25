@@ -42,3 +42,15 @@
   width: max-content;
   padding: 2px 0px;
 }
+
+@media screen and (max-width: 1280px) {
+  .imgContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .card_container {
+    display: none;
+  }
+}
