@@ -1,6 +1,7 @@
 import React from "react";
 import "./Page.css";
 import { useParams } from "react-router-dom";
+import Comments from "../../comments/Comments";
 
 function SinglePage() {
   const { slug } = useParams();
@@ -83,6 +84,12 @@ function SinglePage() {
                 corrupti illum sequi! Amet ipsum temporibus soluta veritatis
                 esse quasi odit commodi blanditiis doloribus. Iste.
               </p>
+            </div>
+            <div className="comments">
+              <Comments />
+              <Comments />
+              <Comments />
+              <Comments />
             </div>
           </div>
           <Menu />
