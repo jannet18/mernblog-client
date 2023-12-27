@@ -10,12 +10,6 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
   place-content: center;
-  /* place-items: center; */
-  /* margin-top: 60px; */
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 50px; */
 }
 .imgContainer {
   flex: 1;
@@ -145,5 +139,6 @@
     grid-template-rows: auto;
     padding: 20px;
     text-align: center;
+    place-items: center;
   }
 }

@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
+import "./Login.css";
 import { Link, Navigate } from "react-router-dom";
-import { UserContext } from "../userContext";
+import { UserContext } from "../../userContext";
 
 const Login = ({ logout }) => {
   const [username, setUsername] = useState("");

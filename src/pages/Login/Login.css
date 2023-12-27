@@ -1,0 +1,34 @@
+form.login,
+form.register {
+  max-width: 400px;
+  margin: 0 auto;
+}
+input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 5px;
+  background-color: #fff;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid skyblue;
+}
+button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  background-color: skyblue;
+  outline: none;
+  border: none;
+  border-radius: 0.3em;
+  color: whitesmoke;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+form.login h1,
+form.register h1 {
+  margin: 50px;
+  text-align: center;
+}

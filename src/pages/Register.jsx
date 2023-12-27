@@ -32,13 +32,13 @@ export const Register = () => {
       <h1>Register</h1>
       <input
         type="text"
-        placeholder="username"
+        placeholder="Create Username"
         onChange={(e) => setUsername(e.target.value)}
         value={username}
       />
       <input
         type="password"
-        placeholder="password"
+        placeholder="Create Password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />

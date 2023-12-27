@@ -33,9 +33,11 @@ export const Post = ({
                 <time>{formatISO9075(new Date(createdAt))}</time>
                 {/* <time>{format(new Date(createdAt), "MMM d, yyyy HH:mm")}</time> */}
               </p>
-              <button className="more_btn" onClick={content}>
-                Read More
-              </button>
+              <Link to={`/post/${_id}`}>
+                <button className="more_btn" onClick={content}>
+                  Read More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

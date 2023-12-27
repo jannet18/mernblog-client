@@ -1,7 +1,8 @@
 import { formatISO9075 } from "date-fns";
 import { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { UserContext } from "../userContext";
+import { UserContext } from "../../userContext";
+import "./PostPage.css";
 
 export default function PostPage() {
   const { id } = useParams();
@@ -19,7 +20,7 @@ export default function PostPage() {
   }
   return (
     <div className="post-page">
-      <h1>{postInfo?.title}</h1>
+      <h1 className="post_title">{postInfo?.title}</h1>
       <p className="">{`${postInfo?.summary}`}</p>
       <div className="author">
         <time>{formatISO9075(new Date(postInfo?.createdAt))}</time>

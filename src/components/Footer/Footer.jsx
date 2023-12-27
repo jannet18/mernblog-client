@@ -7,7 +7,7 @@ function Footer() {
     <div className="footer_container">
       <div className="info">
         <div className="logo">
-          <img src="./aberdare.jpeg" alt="bloggy" width={50} height={50} />
+          <img src="../aberdare.jpeg" alt="bloggy" width={50} height={50} />
           <h1 className="logo_text">Bloggy</h1>
         </div>
         <p className="desc">
@@ -16,7 +16,7 @@ function Footer() {
           porro ipsam blanditiis culpa impedit odio, minus cupiditate, tempore
           molestiae. Excepturi?
         </p>
-        <div className="social">
+        {/* <div className="social">
           <Link>
             <img
               className="social_icon"
@@ -62,15 +62,15 @@ function Footer() {
               height={18}
             />
           </Link>
-        </div>
+        </div> */}
       </div>
       <div className="links">
         <div className="list">
           <span className="listTitle">Links</span>
           <Link to="/">Home</Link>
-          <Link to="/">Blog</Link>
-          <Link to="/">About</Link>
-          <Link to="/">Contact</Link>
+          <Link to="/blog">Blog</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
         <div className="list">
           <span className="listTitle">Tags</span>
