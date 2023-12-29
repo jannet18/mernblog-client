@@ -77,22 +77,22 @@ export default function Header({ token }) {
       <div className="logo">
         {" "}
         <Link to="/blog" className="logo">
-          Bloggy
+          Blogger
         </Link>
       </div>
       {/* </div> */}
       <div className="nav__links">
         <ThemeToggle />
-        <Link className="link" to="/home">
+        <Link className="link" to="/">
           Home
         </Link>
         <Link className="link" to="/contact">
           Contact
         </Link>
 
-        <Link className="link" to="/about">
+        {/* <Link className="link" to="/about">
           About
-        </Link>
+        </Link> */}
         <nav className="account">
           {!username && (
             <>

@@ -69,7 +69,9 @@ body {
   position: absolute;
   left: 1px;
 }
-
+.welcome {
+  font-size: 25px;
+}
 .content {
   display: flex;
   gap: 50px;

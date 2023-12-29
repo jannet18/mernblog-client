@@ -8,7 +8,6 @@ export default function Layout() {
       <div className="wrapper">
         <Header />
         <Outlet />
-        {/* <Footer /> */}
       </div>
     </div>
   );
